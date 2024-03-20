@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ forecast.date | date: 'E, dd MMM yyyy' }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-chip>
+      <mat-icon matChipAvatar >arrow_drop_up</mat-icon>
+      {{ forecast.highTemp }} °C
+    </mat-chip>
+    <mat-chip>
+      <mat-icon matChipAvatar >arrow_drop_down</mat-icon>
+      {{ forecast.lowTemp }} °C
+    </mat-chip>
+  </mat-card-content>
+</mat-card>

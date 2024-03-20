@@ -1,0 +1,7 @@
+<main class="main">
+  <app-location-select [list]="locations"
+                       (selected)="generateForecast($event.lat, $event.long)"
+  ></app-location-select>
+  <app-forecast-list [list]="forecasts"></app-forecast-list>
+</main>
+
