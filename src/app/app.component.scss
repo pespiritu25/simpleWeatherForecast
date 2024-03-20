@@ -1,7 +1,10 @@
-main {
-  min-height: 100%;
+mat-mdc-icon {
+  color: white;
+}
+
+.main {
+  height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
@@ -9,6 +12,58 @@ main {
   background-color: #303030;
   color: white;
   max-width: 100vw;
+  overflow: auto;
+
+  &__side {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    &__logo {
+      max-width: 200px;
+    }
+
+    h1 {
+      font-size: 50px;
+    }
+  }
+
+  &__content {
+    border: 2px solid #fff;
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: space-between;
+    -webkit-box-shadow: 5px 12px 20px 5px rgba(0,0,0,0.32);
+    box-shadow: 5px 12px 20px 5px rgba(0,0,0,0.32);
+
+    app-location-select {
+      align-self: flex-end;
+    }
+
+    &__time-image {
+      position: relative;
+      height: 300px;
+      margin-bottom: 50px;
+
+      &__text-overlap {
+        position: absolute;
+        right: 30px;
+        bottom: 0;
+
+        &__temp {
+          font-size: 60px;
+          font-weight: 700;
+        }
+      }
+
+      app-time-of-day-image {
+
+      }
+    }
+  }
 }
 
 app-forecast-list {

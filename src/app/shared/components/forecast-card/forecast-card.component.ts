@@ -3,11 +3,13 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/mat
 import {MatChip, MatChipsModule} from "@angular/material/chips";
 import {MatIcon} from "@angular/material/icon";
 import {DatePipe} from "@angular/common";
+import {WeatherCodeImageComponent} from "../weather-code-image/weather-code-image.component";
 
 export interface DayForecast {
   date: Date,
   highTemp: number,
   lowTemp: number,
+  weatherCode: number
 }
 
 @Component({
@@ -22,6 +24,7 @@ export interface DayForecast {
     MatIcon,
     MatCardContent,
     DatePipe,
+    WeatherCodeImageComponent,
   ],
   templateUrl: './forecast-card.component.html',
   styleUrl: './forecast-card.component.scss'

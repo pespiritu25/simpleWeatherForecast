@@ -5,7 +5,7 @@ import {MatOption, MatSelect} from "@angular/material/select";
 import {CommonModule} from "@angular/common";
 import {MatInputModule} from "@angular/material/input";
 
-interface LocationLatLong {
+export interface LocationLatLong {
   lat: number;
   long: number;
   name: string;

@@ -1,5 +1,13 @@
 .forecast-list {
+  display: flex;
   grid-gap: 10px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  overflow: auto;
+  width: 100%;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1672px) {
+  .forecast-list {
+    justify-content: left;
+  }
 }
