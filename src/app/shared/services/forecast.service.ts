@@ -1,11 +1,10 @@
-import {Injectable} from "@angular/core";
+import { Injectable } from '@angular/core';
 import { fetchWeatherApi } from 'openmeteo';
-import {DayForecast} from "../components/forecast-card/forecast-card.component";
+import { DayForecast } from '../components/forecast-card/forecast-card.component';
 
 @Injectable({
   providedIn: 'root',
 })
-
 export class ForecastService {
   URL = 'https://api.open-meteo.com/v1/forecast';
 
@@ -15,10 +14,10 @@ export class ForecastService {
       Array.from({ length: (stop - start) / step }, (_, i) => start + i * step);
 
     const params = {
-      "latitude": lat,
-      "longitude": long,
-      "current": ["temperature_2m", "apparent_temperature"],
-      "daily": ["weather_code", "temperature_2m_max", "temperature_2m_min", "sunrise", "sunset"]
+      latitude: lat,
+      longitude: long,
+      current: ['temperature_2m', 'apparent_temperature'],
+      daily: ['weather_code', 'temperature_2m_max', 'temperature_2m_min', 'sunrise', 'sunset'],
     };
 
     const data = await fetchWeatherApi(this.URL, params);
@@ -30,11 +29,11 @@ export class ForecastService {
     const weatherData = {
       daily: {
         time: range(Number(daily.time()), Number(daily.timeEnd()), daily.interval()).map(
-          (t) => new Date((t + utcOffsetSeconds) * 1000)
+          (t) => new Date((t + utcOffsetSeconds) * 1000),
         ),
         weatherCode: daily.variables(0)!.valuesArray()!,
         temperature2mMax: daily.variables(1)!.valuesArray()!,
-        temperature2mMin: daily.variables(2)!.valuesArray()!
+        temperature2mMin: daily.variables(2)!.valuesArray()!,
       },
     };
 
@@ -45,20 +44,20 @@ export class ForecastService {
         date: weatherData.daily.time[i],
         highTemp: Math.round(weatherData.daily.temperature2mMax[i]),
         lowTemp: Math.round(weatherData.daily.temperature2mMin[i]),
-        weatherCode: weatherData.daily.weatherCode[i]
+        weatherCode: weatherData.daily.weatherCode[i],
       });
     }
 
-    console.log(forecastList)
+    console.log(forecastList);
     return forecastList;
   }
 
   async fetchCurrentForecastData(lat: number, long: number, name: string) {
     const params = {
-      "latitude": lat,
-      "longitude": long,
-      "current": "temperature_2m",
-      "timezone": 'auto'
+      latitude: lat,
+      longitude: long,
+      current: 'temperature_2m',
+      timezone: 'auto',
     };
 
     const responses = await fetchWeatherApi(this.URL, params);

@@ -1,10 +1,6 @@
 <mat-form-field appearance="outline">
   <mat-label>Location</mat-label>
-  <mat-select [(value)] = 'selectedOption'
-              (valueChange)="changeOption($event)">
-    <mat-option *ngFor="let item of list"
-                [value]="item"
-    >{{item.name}}
-    </mat-option>
+  <mat-select [(value)]="selectedOption" (valueChange)="changeOption($event)">
+    <mat-option *ngFor="let item of list" [value]="item">{{ item.name }} </mat-option>
   </mat-select>
 </mat-form-field>

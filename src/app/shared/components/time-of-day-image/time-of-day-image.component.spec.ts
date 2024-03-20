@@ -8,10 +8,9 @@ describe('TimeOfDayImageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TimeOfDayImageComponent]
-    })
-    .compileComponents();
-    
+      imports: [TimeOfDayImageComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(TimeOfDayImageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

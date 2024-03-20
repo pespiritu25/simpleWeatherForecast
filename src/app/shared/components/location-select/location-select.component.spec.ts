@@ -8,10 +8,9 @@ describe('LocationSelectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LocationSelectComponent]
-    })
-    .compileComponents();
-    
+      imports: [LocationSelectComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(LocationSelectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

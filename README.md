@@ -13,5 +13,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 - Weather API: `https://open-meteo.com/en`
 
 ## Assets
+
 - `https://www.freepik.com`
 - `https://openweathermap.org/weather-conditions`

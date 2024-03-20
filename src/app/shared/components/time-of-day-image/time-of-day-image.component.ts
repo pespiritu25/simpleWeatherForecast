@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './time-of-day-image.component.html',
-  styleUrl: './time-of-day-image.component.scss'
+  styleUrl: './time-of-day-image.component.scss',
 })
-export class TimeOfDayImageComponent {
-
-}
+export class TimeOfDayImageComponent {}

@@ -1,9 +1,9 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {MatFormField} from "@angular/material/form-field";
-import {MatOption, MatSelect} from "@angular/material/select";
-import {CommonModule} from "@angular/common";
-import {MatInputModule} from "@angular/material/input";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatFormField } from '@angular/material/form-field';
+import { MatOption, MatSelect } from '@angular/material/select';
+import { CommonModule } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
 
 export interface LocationLatLong {
   lat: number;
@@ -14,16 +14,9 @@ export interface LocationLatLong {
 @Component({
   selector: 'app-location-select',
   standalone: true,
-  imports: [
-    FormsModule,
-    MatInputModule,
-    MatFormField,
-    MatSelect,
-    CommonModule,
-    MatOption
-  ],
+  imports: [FormsModule, MatInputModule, MatFormField, MatSelect, CommonModule, MatOption],
   templateUrl: './location-select.component.html',
-  styleUrl: './location-select.component.scss'
+  styleUrl: './location-select.component.scss',
 })
 export class LocationSelectComponent {
   selectedOption: LocationLatLong;
@@ -35,7 +28,7 @@ export class LocationSelectComponent {
   @Input() set list(value: LocationLatLong[]) {
     this._list = value;
     this.changeOption(value[0]);
-  };
+  }
 
   @Output() selected: EventEmitter<LocationLatLong> = new EventEmitter<LocationLatLong>();
 

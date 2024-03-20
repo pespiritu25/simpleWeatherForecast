@@ -1,18 +1,28 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {LocationLatLong, LocationSelectComponent} from "./shared/components/location-select/location-select.component";
-import {DayForecast, ForecastCardComponent} from "./shared/components/forecast-card/forecast-card.component";
-import {ForecastListComponent} from "./shared/components/forecast-list/forecast-list.component";
-import {ForecastService} from "./shared/services/forecast.service";
-import {MatIcon} from "@angular/material/icon";
-import {TimeOfDayImageComponent} from "./shared/components/time-of-day-image/time-of-day-image.component";
+import {
+  LocationLatLong,
+  LocationSelectComponent,
+} from './shared/components/location-select/location-select.component';
+import { DayForecast, ForecastCardComponent } from './shared/components/forecast-card/forecast-card.component';
+import { ForecastListComponent } from './shared/components/forecast-list/forecast-list.component';
+import { ForecastService } from './shared/services/forecast.service';
+import { MatIcon } from '@angular/material/icon';
+import { TimeOfDayImageComponent } from './shared/components/time-of-day-image/time-of-day-image.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LocationSelectComponent, ForecastCardComponent, ForecastListComponent, MatIcon, TimeOfDayImageComponent],
+  imports: [
+    RouterOutlet,
+    LocationSelectComponent,
+    ForecastCardComponent,
+    ForecastListComponent,
+    MatIcon,
+    TimeOfDayImageComponent,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'simple-weather-forecast';
@@ -67,14 +77,12 @@ export class AppComponent {
   constructor(private forecastService: ForecastService) {}
 
   generateForecast(event: LocationLatLong) {
-    this.forecastService.fetchForecastData(event.lat, event.long)
-      .then((data) => {
-        this.forecasts = data;
+    this.forecastService.fetchForecastData(event.lat, event.long).then((data) => {
+      this.forecasts = data;
     });
 
-    this.forecastService.fetchCurrentForecastData(event.lat, event.long, event.name)
-      .then((data) => {
-        this.current = data;
-      });
+    this.forecastService.fetchCurrentForecastData(event.lat, event.long, event.name).then((data) => {
+      this.current = data;
+    });
   }
 }

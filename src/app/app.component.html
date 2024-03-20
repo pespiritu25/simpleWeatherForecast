@@ -1,15 +1,13 @@
 <div class="main">
   <div class="main__content">
-    <app-location-select [list]="locations" (selected)="generateForecast($event)"
-    ></app-location-select>
+    <app-location-select [list]="locations" (selected)="generateForecast($event)"></app-location-select>
     <div class="main__content__time-image">
       <app-time-of-day-image></app-time-of-day-image>
       <div class="main__content__time-image__text-overlap">
-        <span class="main__content__time-image__text-overlap__temp">{{current?.temp}}°C</span>
-        <h1>{{current?.locationName}}</h1>
+        <span class="main__content__time-image__text-overlap__temp">{{ current?.temp }}°C</span>
+        <h1>{{ current?.locationName }}</h1>
       </div>
     </div>
     <app-forecast-list [list]="forecasts"></app-forecast-list>
   </div>
 </div>
-
